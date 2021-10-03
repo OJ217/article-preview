@@ -11,10 +11,6 @@
     box-sizing: border-box;
 }
 
-ul {
-    list-style: none;
-}
-
 img {
     max-width: 100%;
 }
@@ -36,6 +32,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     margin: auto;
+    position: relative;
 }
 
 .article-img-wrapper img {
@@ -62,54 +59,9 @@ body {
     font-size: 16px;
     margin-bottom: 40px;
     padding-right: 18px;
-}   
-
-.share-component {
-    display: none;
-    position: absolute;
-    background-color: var(--very-dark-grayish-blue);
-    width: calc(100% + 80px);
-    bottom: -24px;
-    left: -40px;
-    color: #fff;
-    padding: 24px 40px;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
-    transition: all 0.5s ease-in-out;
-}
-
-.share-component.clicked {
-    display: flex !important;
-}
-
-.share-icons {
-    display: flex;
-    align-items: center;
-}
-
-.share-icons ul {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    align-items: center;
-}
-
-.share-icons p {
-    text-transform: uppercase;
-    color: var(--desaturated-dark-blue);
-    font-family: inherit;
-    font-size: 18px;
-    font-weight: 100;
-    letter-spacing: 8px;
-    margin-right: 24px;
 }
 
 .article-author {
-    position: relative;
-}
-
-.article-author-detail {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -128,18 +80,18 @@ body {
     align-items: flex-start;
 }
 
-.author-id img {
+.author-img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
 
-.author-id div p:nth-child(1){
+.author-info p:nth-child(1){
     color: var(--very-dark-grayish-blue);
     font-weight: 700;
 }
 
-.author-id div p:nth-child(2){
+.author-info p:nth-child(2){
     color: var(--desaturated-dark-blue);
     font-weight: 500;
 }
@@ -152,10 +104,22 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-.share-button:hover {
+/* #share-button-activate {
+
+} */
+
+#share-button-activate:hover {
     color: #fff;
     background-color: var(--very-dark-grayish-blue);
 }
+
+/* #share-button-deactivate {
+
+}
+
+#share-button-deactivate:hover {
+    
+} */
 
 @media only screen and (min-width: 768px) {
     .preview {
@@ -167,14 +131,46 @@ body {
         width: 100%;
         object-fit: cover;
     }
-    .share-component {
-        bottom: 100px;
-        left: 50%;
-        width: 300px;
-        height: 75px;
-        border-radius: 20px;
-    }
-    #share-button-deactivate {
-        display: none;
-    }
+}
+
+.hide-share-component {
+    display: none;
+}
+
+/* change its style in media query */
+/* make different style for deactivate button */
+/* display: none for deactivate button in media query */
+
+.share-component-main {
+    background-color: var(--very-dark-grayish-blue);
+    width: 100%;
+    height: 80px;
+    padding: 24px 40px;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.share-icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.share-icons ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.share-icons p {
+    text-transform: uppercase;
+    color: var(--desaturated-dark-blue);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 8px;
 }
